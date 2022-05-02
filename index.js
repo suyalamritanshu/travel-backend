@@ -15,7 +15,7 @@ dotenv.config();
 DbConnect();
 app.use(express.json());
 var corsOptions = {
-    origin: 'https://travel-backend-personal.herokuapp.com',
+    origin: 'http://127.0.0.1:5500/',
     optionsSuccessStatus: 200, // For legacy browser support
     methods: "GET, POST, DELETE, PUT"
 }
