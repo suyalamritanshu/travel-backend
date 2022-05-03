@@ -5,12 +5,14 @@ const DbConnect = require('./database');
 const PORT = process.env.PORT || 4000;
 const cors = require('cors');
 const tourRoute = require("./routes/tour");
+const tour_middleware = require('./middlewares/tour_middleware')
 
 
 
 dotenv.config();
 
 //Database Connection
+
 
 DbConnect();
 app.use(express.json());
@@ -23,7 +25,8 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 
-app.use("/api/tour", tourRoute);
+
+app.use("/api/tour", tour_middleware, tourRoute);
 
 
 

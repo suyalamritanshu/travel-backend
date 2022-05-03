@@ -9,13 +9,11 @@ router.post("/",  async (req, res) => {
     const newList = new tourList(req.body);
     try {
       const savedList = await newList.save();
-      res.status(201).json(savedList);
+     return res.status(201).json(savedList);
     } catch (err) {
-      res.status(500).json(err);
       console.log(err);
+     return res.status(400);
     }
-   
-  
 }) ;
 
 
