@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
   try {
     const savedList = await newList.save();
     const count = await newList.count({ to });
-    if (count > 3) throw new Error("no more tickets for you");
+    if (count > 2) throw new Error("no more tickets for you");
     else savedList = await newList.save();
 
     res.status(201).json(savedList);
