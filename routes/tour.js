@@ -16,7 +16,7 @@ router.post("/",  async (req, res) => {
     }
    
   
-}) .limit(2);
+}) ;
 
 
 module.exports = router;
