@@ -5,6 +5,7 @@ const DbConnect = require('./database');
 const PORT = process.env.PORT || 4000;
 const cors = require('cors');
 const tourRoute = require("./routes/tour");
+const signRoute = require("./routes/signup");
 const tour_middleware = require('./middlewares/tour_middleware')
 
 
@@ -27,6 +28,8 @@ app.use(cors(corsOptions));
 
 
 app.use("/api/tour", tour_middleware, tourRoute);
+app.use("/api/signup",  signRoute);
+
 
 
 
