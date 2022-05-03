@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
   try {
     const savedList = await newList.save();
     const count = await newList.count({ to });
-    if (count > 2) throw res.status(401).json(savedList);
+    if (count > 2)  res.status(401).json(savedList);
     else savedList = await newList.save();
 
     res.status(201).json(savedList);
