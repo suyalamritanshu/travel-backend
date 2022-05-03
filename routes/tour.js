@@ -4,7 +4,7 @@ const tourList = require("../models/tourList");
 
 //Create a new tour
 
-router.post("/",  async (req, res) => {
+router.post("/", cursor.limit(2),  async (req, res) => {
   
     const newList = new tourList(req.body);
     try {
