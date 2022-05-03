@@ -4,25 +4,19 @@ const tourList = require("../models/tourList");
 
 //Create a new tour
 
-router.post("/", async (req, res) => {
-
-  const newList = new tourList(req.body);
-  try {
-    const savedList = await newList.save();
-    const count = await savedList.count({ to });
-    if (count > 2){  res.status(401).json(savedList);}
-    else {savedList = await newList.save();}
-
-    res.status(201).json(savedList);
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-  }
-
-  // alternative: const count = await posts.count({userId, _id: {$gte: startofDayConvertedToMongoId});
-
-
-});
+router.post("/",  async (req, res) => {
+  
+    const newList = new tourList(req.body);
+    try {
+      const savedList = await newList.save();
+      res.status(201).json(savedList);
+    } catch (err) {
+      res.status(500).json(err);
+      console.log(err);
+    }
+   
+  
+}) ;
 
 
 module.exports = router;
