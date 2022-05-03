@@ -19,7 +19,7 @@ dotenv.config();
 DbConnect();
 app.use(express.json());
 var corsOptions = {
-    origin: 'https://chipper-kitsune-b44c1f.netlify.app',
+    origin: 'https://travel-site-blog.netlify.app',
     optionsSuccessStatus: 200, // For legacy browser support
     methods: "GET, POST, DELETE, PUT"
 }
