@@ -19,9 +19,12 @@ dotenv.config();
 DbConnect();
 app.use(express.json());
 var corsOptions = {
+
     origin: 'https://travel-site-blog.netlify.app',
     optionsSuccessStatus: 200, // For legacy browser support
-    methods: "GET, POST, DELETE, PUT"
+    credentials: true,
+    origin: true,
+
 }
 
 app.use(cors(corsOptions));
@@ -29,8 +32,8 @@ app.use(cors(corsOptions));
 
 
 app.use("/api/tour", tour_middleware, tourRoute);
-app.use("/api/signup",  signRoute);
-app.use("/api/login",  loginRoute);
+app.use("/api/signup", signRoute);
+app.use("/api/login", loginRoute);
 
 
 
@@ -38,6 +41,6 @@ app.use("/api/login",  loginRoute);
 
 
 
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
